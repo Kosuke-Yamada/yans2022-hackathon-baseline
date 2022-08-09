@@ -1,0 +1,9 @@
+fugashi==1.1.2
+ipadic==1.0.0
+mlflow==1.27.0
+numpy==1.22.3
+pandas==1.4.2
+pytorch_lightning==1.6.5
+scikit_learn==1.1.2
+torch==1.12.0
+transformers==4.21.1
