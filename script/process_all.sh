@@ -1,5 +1,6 @@
 #! データ解凍
 tar Jxfv ./data/dataset_shared_initial.tar.xz -C ./data/
+# tar Jxfv ./data/dataset_shared.tar.xz -C ./data/
 
 #! 前処理 (小規模な学習セットと開発セット)
 mkdir -p ./data/preprocessing_shared/
