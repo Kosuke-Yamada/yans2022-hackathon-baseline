@@ -44,7 +44,7 @@
 - レビューインデックス (`review_idx`) はレビューごとに一意の値が割り振られています。
 
 ### 提出フォーマット
-- ファイル形式は1行ごとのJSONファイルである`.jsonl`としてください。ファイル名は、リーダーボードセットでは`submit_leader_board.jsonl`、最終評価セットでは`submit_final_result.jsonl`として下さい。
+- ファイル形式は1行ごとのJSONファイルである`.jsonl`としてください。ファイル名に関して、リーダーボードセットでは`submit_leader_board.jsonl`としリーダーボードへ提出してください。また、最終評価セットでは`submit_final_result.jsonl`を含むチーム名のわかるzipファイル (たとえば、`team_z.zip`) として提出してください。
 - 辞書のキーを`product_idx`と`pred_list`にし、キー`product_idx`に商品インデックス (`product_idx`) の値を、キー`pred_list`には、レビューインデックス (`review_idx`) と予測されたスコア (`pred_score`) の辞書のリストとしてください。
 - `pred_list`がランキング順になっていなくても問題ありません。ただ、`pred_score`は値の大きい方がランキング上位であるようにしてください。
 
@@ -84,7 +84,7 @@ python -m pip install -r requirements.txt
 - ハッカソン終盤に`final_result.jsonl`を含む`./data/dataset_shared.tar.xz`を配布します。
 
 #### 実行コード
-```
+```sh
 tar Jxfv ./data/dataset_shared_initial.tar.xz -C ./data/
 # tar Jxfv ./data/dataset_shared.tar.xz -C ./data/
 ```
@@ -204,3 +204,18 @@ python ./src/evaluation.py \
 ```sh
 sh ./scripts/process_all.sh
 ```
+
+### 提出
+#### リーダーボード
+- `./data/evaluation/predict_helpful_votes/cl-tohoku_bert-base-japanese_lr1e-5/submit_leader_board.jsonl`をリーダーボード ([link])へ提出。
+
+#### 最終評価
+```sh
+INPUT_DIR=./data/evaluation/predict_helpful_votes/cl-tohoku_bert-base-japanese_lr1e-5
+mkdir -p ${INPUT_DIR}/team_z
+cp ${INPUT_DIR}/submit_final_result.jsonl ${INPUT_DIR}/team_z
+cd ${INPUT_DIR}
+zip team_z -r team_z
+```
+- `./data/evaluation/predict_helpful_votes/cl-tohoku_bert-base-japanese_lr1e-5/team_z.zip`をYANSの運営委員へ提出。
+- zipファイル名はチーム名がわかるようにしてください。
