@@ -89,7 +89,8 @@ tar Jxfv ./data/dataset_shared_initial.tar.xz -C ./data/
 # tar Jxfv ./data/dataset_shared.tar.xz -C ./data/
 ```
 
-### 1. 前処理 (`preprocessing.py`, `preprocessing.ipynb`)
+### 1. 前処理 (`preprocessing.py`, `preprocessing.ipynb`) [![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Kosuke-Yamada/yans2022-hackathon-baseline/blob/main/notebook/preprocessing.ipynb)
+
 - `training.jsonl`のデータを学習セットと開発セットに分割しています。
 
 #### 実行コード
@@ -111,7 +112,7 @@ python ./src/preprocessing.py \
     --random_state 0
 ```
 
-### 2. 学習 (`train.py`, `train.ipynb`)
+### 2. 学習 (`train.py`, `train.ipynb`) [![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Kosuke-Yamada/yans2022-hackathon-baseline/blob/main/notebook/train.ipynb)
 - 日本語東北大BERTを用いて、レビュー本文 (`review_body`) を入力とし、対数変換された役に立つ投票数を予測するように学習する。
 
 #### 実行コード
@@ -139,7 +140,7 @@ python ./src/train.py \
     --gpus 0
 ```
 
-### 3. 推論 (`predict.py`, `predict.ipynb`)
+### 3. 推論 (`predict.py`, `predict.ipynb`) [![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Kosuke-Yamada/yans2022-hackathon-baseline/blob/main/notebook/predict.ipynb)
 - 学習されたBERTを用いて、レビュー本文を入力とし、対数変換された役に立つ投票数を予測する。
 
 #### 実行コード
@@ -170,7 +171,7 @@ python ./src/predict.py \
     --gpu 0
 ```
 
-### 4. 評価 (`evaluation.py`, `evaluation.ipynb`)
+### 4. 評価 (`evaluation.py`, `evaluation.ipynb`) [![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/Kosuke-Yamada/yans2022-hackathon-baseline/blob/main/notebook/evaluation.ipynb)
 - 予測された役に立つ投票数を提出フォーマットに変換する。
 - また、役に立つ投票数を含むデータの場合、評価スコアであるndcg@5を算出する。
 
