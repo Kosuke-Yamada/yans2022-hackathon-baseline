@@ -6,7 +6,7 @@ INPUT_FILE=./data/predict/${EXPERIMENT_NAME}/${RUN_NAME}/training-val.jsonl
 # INPUT_FILE=./data/predict/${EXPERIMENT_NAME}/${RUN_NAME}/final_result.jsonl
 
 OUTPUT_DIR=./data/evaluation/${EXPERIMENT_NAME}/${RUN_NAME}/
-mkdir -p ${EVAL_DIR}
+mkdir -p ${OUTPUT_DIR}
 
 python ./src/evaluation.py \
     --input_file ${INPUT_FILE} \
