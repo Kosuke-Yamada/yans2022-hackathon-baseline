@@ -81,10 +81,12 @@ python -m pip install -r requirements.txt
 ### 0. データセットの獲得
 - 今回のハッカソンで使用するデータが`./data/dataset_shared_initial.tar.xz`にあります。それを解凍してください。
 - 圧縮ファイルには、`training.jsonl`と`leader_board.jsonl`が入っています。
+- ハッカソン終盤に`final_result.jsonl`を含む`./data/dataset_shared.tar.xz`を配布します。
 
 #### 実行コード
 ```
 tar Jxfv ./data/dataset_shared_initial.tar.xz -C ./data/
+# tar Jxfv ./data/dataset_shared.tar.xz -C ./data/
 ```
 
 ### 1. 前処理 (`preprocessing.py`, `preprocessing.ipynb`)
@@ -187,7 +189,7 @@ INPUT_FILE=./data/predict/${EXPERIMENT_NAME}/${RUN_NAME}/training-val.jsonl
 # INPUT_FILE=./data/predict/${EXPERIMENT_NAME}/${RUN_NAME}/final_result.jsonl
 
 OUTPUT_DIR=./data/evaluation/${EXPERIMENT_NAME}/${RUN_NAME}/
-mkdir -p ${EVAL_DIR}
+mkdir -p ${OUTPUT_DIR}
 
 python ./src/evaluation.py \
     --input_file ${INPUT_FILE} \
