@@ -95,7 +95,7 @@ tar Jxfv ./data/dataset_shared_initial.tar.xz -C ./data/
 
 #### 実行コード
 ```sh
-sh ./scripts/preprocessing.sh
+sh ./script/preprocessing.sh
 ```
 
 #### preprocessing.shの例
@@ -117,7 +117,7 @@ python ./src/preprocessing.py \
 
 #### 実行コード
 ```sh
-sh ./scripts/train.sh
+sh ./script/train.sh
 ```
 
 #### train.shの例
@@ -145,7 +145,7 @@ python ./src/train.py \
 
 #### 実行コード
 ```sh
-sh ./scripts/predict.sh
+sh ./script/predict.sh
 ```
 
 #### predict.shの例
@@ -177,7 +177,7 @@ python ./src/predict.py \
 
 #### 実行コード
 ```sh
-sh ./scripts/evaluation.sh
+sh ./script/evaluation.sh
 ```
 
 #### evaluation.shの例
