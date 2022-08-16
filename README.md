@@ -202,7 +202,7 @@ python ./src/evaluation.py \
 
 #### 実行コード
 ```sh
-sh ./scripts/process_all.sh
+sh ./script/process_all.sh
 ```
 
 ### 提出
